@@ -1,4 +1,4 @@
-FROM php:7.4-fpm
+FROM php:8.0-fpm
 LABEL maintainer="Dzango Technologies Limited <info@dzango.com>"
 
 ARG memory_limit=-1
@@ -65,7 +65,6 @@ RUN ulimit -n 4096 \
     && echo "upload_max_filesize="$upload_max_filesize > /usr/local/etc/php/conf.d/upload_max_filesize.ini \
     && pecl install imagick \
     && docker-php-ext-enable imagick \
-    && pecl install geoip-1.1.1  && echo "extension=geoip.so" >> /usr/local/etc/php/conf.d/geoip.ini \
     && /usr/sbin/nginx -v \
     && setcap cap_net_bind_service=+ep /usr/sbin/nginx \
     && curl -sL https://deb.nodesource.com/setup_$node_version.x | bash - \
