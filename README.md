@@ -1,11 +1,1 @@
-# dzangolab/docker-php-nginx
-
-docker image for php and nginx
-
-## Usage
-
-Build image
-
-``` bash
-make build
-```
+This package is deprecated. see instead https://github.com/dzangolab/dockerfiles/tree/main/php-fpm-nginx
